@@ -1,0 +1,411 @@
+/* Estilos generales */
+body {
+  font-family: 'Lora';
+  background: linear-gradient(rgb(208, 249, 255), rgb(208, 249, 255));
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+/* Títulos principales */
+#main-title {
+  font-size: 4rem;
+  color: #000000;
+  font-weight: 400;
+  font-family: Arial Rounded Bold;
+  text-align: center;
+}
+
+#sub-title.site-heading-upper {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #00eaff;
+  text-align: center;
+}
+
+h1, h2, h3, h5, h6 {
+  font-family: 'Arial Rounded Bold';
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+/* Párrafos */
+p {
+  line-height: 1.75;
+  margin-top: 12px;
+}
+
+/* Texto tenue */
+.text-faded {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Encabezados del sitio */
+.site-heading {
+  margin-top: 80px;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  font-family: 'Arial Rounded Bold';
+}
+
+.site-heading .site-heading-upper {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.site-heading .site-heading-lower {
+  font-size: 5rem;
+  font-weight: 100;
+  color: black;
+}
+
+/* Secciones de la página */
+.page-section {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.section-heading {
+  text-transform: uppercase;
+}
+
+.section-heading .section-heading-upper {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  padding-bottom: .5rem;
+}
+
+.section-heading .section-heading-lower.small {
+  font-size: smaller; /* o el tamaño específico que desees, como 'small' */
+}
+
+.section-heading .section-heading-lower {
+  display: block;
+  font-size: 3rem;
+  font-weight: 100;
+}
+
+.section-heading .section-heading-under {
+  display: block;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 300;
+  margin-top: .5rem;
+}
+
+/* Fondo atenuado */
+.bg-faded {
+  background-color: rgba(255, 255, 255);
+}
+
+/* Rectángulo superior */
+.rectangle {
+  width: 100%;
+  height: 70px;
+  background-color: #3498db;
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Logotipo superior */
+#logo {
+  width: 14rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+/* Menú de navegación principal */
+#mainNav {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-family: 'Arial Rounded Bold';
+  z-index: 1000;
+}
+
+#mainNav .navbar-brand {
+  color: #00eaff;
+  margin-left: 80px;
+  width: auto;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link {
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+}
+
+#mainNav .navbar-nav .nav-item.active .nav-link {
+  color: rgb(85, 76, 255);
+}
+
+@media (min-width: 992px) {
+  #mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 0.9rem;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link:hover,
+  #mainNav .navbar-nav .nav-item.active .nav-link:hover {
+    color: rgb(85, 76, 255);
+  }
+}
+
+/* Botón extra grande */
+.btn-xl {
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+#btncont{
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: inline-block;
+}
+
+
+/* Sección de introducción */
+.intro {
+  position: relative;
+  margin-bottom: 0;
+  z-index: 1;
+}
+
+
+
+.btn-leer-mas {
+  position: absolute;
+  bottom: 1rem; /* Ajusta la distancia desde la parte inferior del contenedor */
+  left: 50%; /* Centra horizontalmente el botón */
+  transform: translateX(-50%); /* Ajusta para centrar completamente el botón */
+  
+}
+
+#puesto-text {
+  font-size:1rem; /* Ajusta el tamaño según tus necesidades */
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+
+@media (min-width: 992px) {
+  .intro{
+    margin-bottom: 10px;
+  }
+
+  .intro .intro-img {
+    width: 75%;
+    float: right;
+  }
+  .intro .intro-text {
+    left: 0;
+    width: 60%;
+    margin-top: 0;
+    position: absolute;
+  }
+  .intro .intro-text .intro-button {
+    width: 100%;
+    left: 0;
+    position: absolute;
+    bottom: -2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro .intro-text {
+    width: 45%;
+  }
+}
+
+/* Contenedor del blog */
+.blog-container {
+  height: 90%;
+  width: calc(100%);
+  margin: 0 0 0 0;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+}
+
+.blog-container img {
+  max-width: 100%;
+  height: auto;
+  
+}
+
+/* Cuadro blanco de compromiso */
+.cta .cta-inner {
+  margin-bottom: 0;
+  position: relative;
+  margin-top: -3rem;
+  background-color: rgb(255, 251, 251);
+}
+
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgb(255, 255, 255);
+  
+}
+
+/* Estilos del título del blog */
+#blog-title {
+  font-size: 1.5rem;
+}
+#blog-container{
+  margin-top: 70px;
+}
+/* Contenido del blog */
+#blog-content {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Estilos del pie de página */
+.footer {
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  width: 100%;
+  position: relative;
+  clear: both;
+}
+
+.footer .social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.footer .social-icons li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.footer .social-icons a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+/* Horarios del negocio */
+.list-hours {
+  font-size: 0.9rem;
+}
+
+.list-hours .list-hours-item {
+  border-bottom: 1px solid rgb(2, 2, 2);
+  padding-bottom: .25rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.list-hours .list-hours-item.today {
+  font-weight: bold;
+  color: #ff0000;
+}
+
+@media (min-width: 992px) {
+  .list-hours {
+    width: 50%;
+    font-size: 1.1rem;
+  }
+}
+
+.address strong {
+  font-size: 1.2rem;
+}
+
+/* Estilos específicos para dispositivos móviles */
+@media (max-width: 991.98px) {
+  #mainNav .navbar-collapse {
+    padding: 1rem;
+    background-color: #3498db;
+    margin-top: 30px;
+  }
+  #mainNav .navbar-brand {
+    display: none;
+  }
+  #mainNav .navbar-toggler {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    z-index: 1001;
+  }
+  #mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 1rem;
+    color: white;
+    padding-left: 0;
+  }
+  .intro .intro-img {
+    width: 100%;
+    height: auto;
+  }
+  .cta .cta-inner {
+    padding: 1rem;
+    margin: 0;
+  }
+  .product-item .product-item-title {
+    margin-bottom: 0;
+  }
+  .product-item .product-item-img {
+    max-width: 100%;
+  }
+  .product-item .product-item-description {
+    margin-top: 0;
+    max-width: 100%;
+  }
+  /* Ajuste para reducir el espacio entre la cabecera y el mensaje */
+  .intro .intro-text {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+}
+
+.custom-rounded {
+  border-radius: 20px; /* Ajusta este valor según tus necesidades */
+}
+
+#about .container{
+ display: felx;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ margin-top: 2rem;
+ text-align: center;
+}
+
+.masthead {
+  height: 400px;
+  background-image: url('{% static core/img/clouds.jpg %}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+

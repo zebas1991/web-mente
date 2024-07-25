@@ -1,0 +1,96 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Nosotros{% endblock %}
+{% block content %}
+<br>
+<br>
+
+<section class="page-section clearfix">
+  <div class="container">
+    <div class="row mb-5">
+
+
+      <!-- Sección de Misión -->
+      <div class="col-lg-4 col-md-12 order-md-1 mb-3 mb-md-0 d-flex align-items-center justify-content-center">
+        <img src="{% static 'core/img/mountaintop.png' %}" class="img-fluid rounded" alt="Imagen de misión">
+      </div>
+      <div class="col-lg-8 col-md-12 order-md-2">
+        <div class="intro-text left-0 text-center bg-faded p-4 custom-rounded">
+          <h2 class="section-heading">
+            <span class="section-heading-upper">Misión</span>
+          </h2>
+          <p class="mb-3" style="text-align: justify;">
+            En "mente.energia", nuestra misión es inspirar y empoderar a las personas a alcanzar un estado de bienestar integral que abarca los aspectos emocional, 
+            físico y mental de sus vidas. Basándonos en la sabiduría de la filosofía estoica, 
+            promovemos prácticas y hábitos que fomentan la resiliencia, la serenidad y la fortaleza interior. 
+            A través de contenidos reflexivos, motivacionales y educativos, 
+            buscamos guiar a nuestra comunidad hacia una vida más equilibrada y significativa.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+
+
+
+      <!-- Sección de Visión -->
+      <div class="col-lg-4 col-md-12 order-md-1 mb-3 mb-md-0 d-flex align-items-center justify-content-center">
+        <img src="{% static 'core/img/path.png' %}" class="img-fluid rounded"  alt="Imagen de visión">
+      </div>
+      <div class="col-lg-8 col-md-12 order-md-1">
+        <div class="intro-text left-0 text-center bg-faded p-4 custom-rounded">
+          <h2 class="section-heading">
+            <span class="section-heading-upper">Visión</span>
+          </h2>
+          <p class="mb-3" style="text-align: justify;">
+            Nuestra visión en "mente.energia" es ser una fuente de referencia y apoyo constante para quienes
+            buscan mejorar su bienestar integral. Aspiramos a crear una comunidad global de individuos conscientes y empoderados
+            que aplican los principios estoicos en su vida diaria, logrando así una mayor paz interior, salud física y claridad mental. 
+            Nos comprometemos a seguir creciendo y evolucionando, ofreciendo contenido de calidad 
+            que inspire a las personas a vivir con propósito, equilibrio y determinación.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!--perfiles de nosotros-->
+
+<h1 style="text-align:center; margin-bottom: 0;"> Nuestro equipo</h1>
+<style>
+    .service-item {
+        min-height: 350px; /* Ajusta esta altura según tu diseño y contenido */
+    }
+</style>
+<section class="page-section cta" style="margin-top: 0;">
+  <div class="container">
+    <div class="row">
+      {% for tu in nosotros_list %}
+        <div class="col-md-4 mb-4" style="margin-top: 3rem;">
+          <div class="cta-innerv blog-container text-center rounded mb-5">
+            <!-- Contenido del blog -->
+            <div class="service-item-header">
+                <h3><span style="margin-bottom:0.3rem;">{{ tu.name }}</span></h3>
+                <h4><span style="font-size:0.8rem;">{{ tu.puesto }}</span></h4>
+            </div>
+            <img class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{ tu.image.url }}" alt="">
+            <p id="tu-content" class="mb-0">
+              {{ tu.trayectoria |slice:":100" |safe | linebreaksbr }}{% if tu.trayectoria|length > 100 %}...{% endif %}
+            </p>
+            <p class="mb-0">
+            </p>
+            <a href="{% url 'nosotros:nosotros_detail' tu.pk %}" class="btn btn-primary mt-3">Leer más</a>
+          </div><!-- Cerrar el div .cta-innerv -->
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

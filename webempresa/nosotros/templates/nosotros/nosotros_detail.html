@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}Nosotros{% endblock %}
+
+
+{% block content %}
+<div class="container" style="margin-top: 100px; margin-bottom: 100px;">
+    <article style="background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h1 style="text-align: center;">{{ tu.name|safe }}</h1>
+        <h4><span id="puesto-text">{{ tu.puesto }}</span></h4>
+        <br>
+        <br>
+        {% if tu.image %}
+        <img src="{{ tu.image.url }}" alt="{{ tu.name }}" class="img-fluid mb-3" style="max-width: auto; height: auto; display: block; margin: 0 auto;">
+        {% endif %}
+        <p>{{ tu.trayectoria | safe }}</p>
+        <br>
+        <br>
+        <br>
+    </article>
+    
+</div>
+{% endblock %}

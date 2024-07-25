@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% block title %}Servicios{% endblock %}
+{% block content %}
+
+<style>
+  .service-item {
+    min-height: 350px; /* Ajusta esta altura según tu diseño y contenido */
+  }
+</style>
+<br>
+<br>
+<br>
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      {% for service in services reversed %}
+        <div class="col-md-4 mb-4" style="margin-top: 3rem;">
+          <div class="cta-inner service-item text-center rounded mb-5">
+            <h3 class="section-heading mb-3">
+              <span class="section-heading-lower small">{{ service.title }}</span>
+            </h3>
+            {% if service.image %}
+              <img class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{ service.image.url }}" alt="{{ service.title }}">
+            {% endif %}
+            <p class="mb-0">{{ service.content | slice:":110" | safe | linebreaksbr }}{% if service.content|length > 100 %}...{% endif %}</p>
+          </div>
+          <a href="{% url 'services:services_detail' pk=service.pk %}" class="btn btn-primary btn-leer-mas mt-3">Leer más</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

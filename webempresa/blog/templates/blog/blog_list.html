@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+
+
+{% block content %}
+<br>
+<br>
+<section class="page-section cta">
+  <div class="container">
+    <div class="row">
+      {% for post in posts %}
+        <div class="col-md-4 mb-4">
+          <div class="cta-innerv blog-container text-center rounded mb-4">
+            <!-- Contenido del blog -->
+            <h3 class="section-heading mb-3">
+              <span class="section-heading-lower" id="blog-title">{{ post.title }}</span>
+            </h3>
+            <img class="mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{{ post.image.url }}" alt="">
+            <p id="blog-content" class="mb-0 mbt">
+              {{ post.content |slice:":100" |safe | linebreaksbr }}{% if post.content|length > 100 %}...{% endif %}
+            </p>
+            <p class="mb-0">
+            </p>
+            <a href="{% url 'blog:blog_detail' post.pk %}" class="btn btn-primary mt-3">Leer más</a>
+          </div><!-- Cerrar el div .cta-innerv -->
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+    
