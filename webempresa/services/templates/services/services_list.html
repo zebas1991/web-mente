@@ -6,6 +6,7 @@
   .service-item {
     min-height: 350px; /* Ajusta esta altura según tu diseño y contenido */
   }
+
 </style>
 <br>
 <br>
@@ -13,9 +14,9 @@
 <section class="page-section cta">
   <div class="container">
     <div class="row">
-      {% for service in services reversed %}
+      {% for service in services %}
         <div class="col-md-4 mb-4" style="margin-top: 3rem;">
-          <div class="cta-inner service-item text-center rounded mb-5">
+          <div class="cta-inner service-item text-center rounded mb-4">
             <h3 class="section-heading mb-3">
               <span class="section-heading-lower small">{{ service.title }}</span>
             </h3>
